@@ -1,0 +1,383 @@
+/************ Color variables ***********/
+
+:root {
+  --main-news-red: #c4160c;
+  --secondary-news-black: #303134;
+  --wine-news: #c4170c;
+  --green-news: #16ae54;
+  --orange-news: #ec8006;
+  --black-news: #2f3134;
+
+  --border-separator: #ebedef;
+
+  --navbar-border: #f5f6f7;
+  --navbar-darkblue: #1e4b9b;
+  --navbar-darkgreen: #006766;
+  --navbar-cartola-orange: #e3662b;
+  --navbar-lightred: #fb0735;
+  --navbar-pink: #ff75bb;
+  --navbar-purple: #a81d83;
+}
+
+/************ Color declarations ***********/
+
+.--wine {
+  color: var(--wine-news);
+}
+.--mainRed {
+  color: var(--main-news-red);
+}
+.--secondaryBlack {
+  color: var(--secondary-news-black);
+}
+.--darkblue {
+  color: var(--navbar-darkblue);
+}
+.--darkgreen {
+  color: var(--navbar-darkgreen);
+}
+.--green {
+  color: var(--green-news);
+}
+.--cartola {
+  color: var(--navbar-cartola-orange);
+}
+.--lightred {
+  color: var(--navbar-lightred);
+}
+.--pink {
+  color: var(--navbar-pink);
+}
+.--orange {
+  color: var(--orange-news);
+}
+.--black {
+  color: var(--black-news);
+}
+.--purple {
+  color: var(--navbar-purple);
+}
+.--navBorder {
+  border: solid 1px var(--navbar-border);
+
+  /* Falta extender as bordas até o fim da página */
+}
+.--newsSeparator {
+  border: 1px solid var(--border-separator);
+
+  margin: 1.56rem 0;
+}
+.verticalSeparator {
+  width: 1px;
+  size: 100%;
+
+  margin: 0 2.25rem;
+
+  border: none;
+  background-color: var(--border-separator);
+}
+
+/************ General Styles ***********/
+
+html {
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  filter: brightness(1.1);
+}
+
+h1:hover,
+h2:hover,
+h3:hover {
+  filter: brightness(1.1);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 37px;
+}
+
+main {
+  max-width: 1250px;
+}
+
+/************ Header and Navigation Bar ***********/
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.logo,
+.logoMobile {
+  margin: 22px auto;
+}
+
+.logoMobile {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* Navigation bar */
+#navbar .navbar {
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#navbar .navbarLink {
+  font-size: 19px;
+
+  margin: 15px 1rem;
+}
+
+/*************** News **************/
+
+#news {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2.25rem;
+}
+
+#news h3 {
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 17.5px;
+  margin-top: 11px;
+}
+
+#news h2 {
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 25px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+
+#news p {
+  font-size: 14px;
+
+  line-height: 19px;
+}
+
+#news img {
+  width: 15rem;
+
+  border-radius: 12px;
+}
+
+/* First column */
+#news .firstColumn .mainNotice {
+  font-size: 3.25rem;
+  font-weight: 700;
+  width: 39rem;
+
+  margin-bottom: 1.81rem;
+}
+
+#news .firstColumn .secondaryNotice {
+  font-weight: 500;
+
+  margin-bottom: 7px;
+}
+
+/* News with image */
+#news .firstColumn .newsWithImage,
+#news .firstColumn .newsWithoutImage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#news .firstColumn .noticeWithImage,
+#news .firstColumn .noticeWithoutImage {
+  width: 12.06rem;
+}
+
+#news .firstColumn .noticeWithImage img {
+  border-radius: 12px;
+  width: 12.06rem;
+}
+
+/* Second column */
+#news .secondColumn {
+  width: 240px;
+}
+
+#news .secondColumn div:nth-child(2),
+#news .thirdColumn div:nth-child(2) {
+  margin: 50px 0;
+}
+
+/* Third column */
+#news .thirdColumn {
+  width: 240px;
+}
+
+/* Footer */
+
+footer p {
+  font-weight: 500;
+  font-size: 12px;
+
+  color: #3b4242;
+
+  /* text-align: center; */
+  margin: 25px auto 10px;
+
+  opacity: 0.5;
+}
+
+/*************** Media Queries ************/
+
+@media (max-width: 600px) {
+  /* Header and Navbar */
+  .navbar li:nth-child(odd),
+  .logo {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .navbar li:last-child {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .logoMobile {
+    visibility: visible;
+    position: relative;
+  }
+
+  #navbar .navbar .navbarLink {
+    white-space: nowrap;
+    margin: 15px 0.2rem;
+  }
+
+  /* Main */
+  main {
+    max-width: 570px;
+  }
+
+  #news {
+    display: flex;
+    margin-top: 2.25rem;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 15px;
+  }
+
+  #news .firstColumn .mainNews {
+    margin-bottom: 20px;
+  }
+
+  #news .firstColumn .mainNotice {
+    font-size: 32px;
+  }
+
+  #news .firstColumn .secondaryNotice {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  #news .firstColumn .newsWithImage p,
+  #news .firstColumn .newsWithoutImage p,
+  #news .secondColumn p,
+  #news .thirdColumn p {
+    font-size: 16px;
+
+    margin-top: 15px;
+  }
+
+  #news .firstColumn p,
+  #news .firstColumn h2,
+  #news .firstColumn h3 {
+    color: var(--wine-news);
+  }
+
+  #news .secondColumn p,
+  #news .secondColumn h2,
+  #news .secondColumn h3 {
+    color: var(--green-news);
+  }
+
+  #news .thirdColumn p,
+  #news .thirdColumn h2,
+  #news .thirdColumn h3 {
+    color: var(--orange-news);
+  }
+
+  #news img,
+  #news .firstColumn .noticeWithImage img {
+    width: 120px;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+
+  #news .firstColumn,
+  #news .firstColumn .noticeWithImage,
+  #news .firstColumn .noticeWithoutImage,
+  #news .firstColumn .mainNotice,
+  #news .secondColumn,
+  #news .thirdColumn {
+    width: 100%;
+  }
+
+  .verticalSeparator,
+  .--newsSeparator,
+  h3 {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  #news .newsWithImage a,
+  #news .secondColumn a,
+  #news .thirdColumn a {
+    display: flex;
+    align-items: center;
+  }
+
+  #news .newsWithImage,
+  #news .newsWithoutImage {
+    flex-direction: column;
+  }
+
+  #news .newsWithImage > div,
+  #news .newsWithoutImage > div,
+  #news .secondColumn > div,
+  #news .thirdColumn > div {
+    padding: 20px 0;
+  }
+
+  #news .secondColumn div:nth-child(2),
+  #news .thirdColumn div:nth-child(2) {
+    margin: 0 0;
+  }
+
+  #news .firstColumn .noticeWithImage,
+  #news .firstColumn .noticeWithoutImage,
+  #news .secondColumn div,
+  #news .thirdColumn div {
+    border-top: 1px solid var(--border-separator);
+  }
+}
